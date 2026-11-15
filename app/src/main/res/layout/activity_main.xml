@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_main">
+    android:background="@color/bg_main"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="22dp"
+        android:paddingHorizontal="20dp"
         android:paddingTop="16dp"
-        android:paddingBottom="20dp">
+        android:paddingBottom="24dp"
+        android:gravity="center_horizontal">
 
         <!-- ═══════════════════════════════════════ -->
         <!-- TOP BAR: Title + Badge                  -->
@@ -22,29 +24,41 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginBottom="14dp">
+            android:layout_marginBottom="16dp">
 
-            <TextView
-                android:id="@+id/tvAppTitle"
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="FORCE 5G"
-                android:textColor="@color/text_primary"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:fontFamily="monospace"
-                android:letterSpacing="0.1" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvAppTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FORCE 5G"
+                    android:textColor="@color/text_primary"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.12" />
+
+                <View
+                    android:layout_width="44dp"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/accent_primary" />
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/badge_bg"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="3dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
                 android:text="v1.0"
                 android:textColor="@color/accent_blue"
-                android:textSize="9sp"
+                android:textSize="10sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace" />
         </LinearLayout>
@@ -58,7 +72,8 @@
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:background="@drawable/card_rounded_bg"
-            android:padding="10dp"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="12dp"
             android:layout_marginBottom="6dp">
 
             <!-- Status dot -->
@@ -74,10 +89,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginStart="8dp"
-                android:text="—"
+                android:layout_marginStart="10dp"
+                android:text="Detecting…"
                 android:textColor="@color/text_primary"
-                android:textSize="12sp"
+                android:textSize="13sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace"
                 android:singleLine="true" />
@@ -86,7 +101,7 @@
             <LinearLayout
                 android:id="@+id/signalBarsContainer"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="16dp"
                 android:orientation="horizontal"
                 android:gravity="bottom"
                 android:layout_marginEnd="10dp">
@@ -94,25 +109,25 @@
                 <View
                     android:id="@+id/signalBar1"
                     android:layout_width="4dp"
-                    android:layout_height="6dp"
+                    android:layout_height="5dp"
                     android:layout_marginEnd="2dp"
                     android:background="@drawable/signal_bar_filled" />
                 <View
                     android:id="@+id/signalBar2"
                     android:layout_width="4dp"
-                    android:layout_height="10dp"
+                    android:layout_height="9dp"
                     android:layout_marginEnd="2dp"
                     android:background="@drawable/signal_bar_filled" />
                 <View
                     android:id="@+id/signalBar3"
                     android:layout_width="4dp"
-                    android:layout_height="14dp"
+                    android:layout_height="13dp"
                     android:layout_marginEnd="2dp"
                     android:background="@drawable/signal_bar_filled" />
                 <View
                     android:id="@+id/signalBar4"
                     android:layout_width="4dp"
-                    android:layout_height="18dp"
+                    android:layout_height="16dp"
                     android:background="@drawable/signal_bar_empty" />
             </LinearLayout>
 
@@ -122,11 +137,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/badge_5g"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="3dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
                 android:text="LTE"
                 android:textColor="@color/text_primary"
-                android:textSize="10sp"
+                android:textSize="11sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace" />
         </LinearLayout>
@@ -138,128 +153,102 @@
             android:layout_height="wrap_content"
             android:text="Checking connection…"
             android:textColor="@color/text_muted"
-            android:textSize="10sp"
+            android:textSize="11sp"
             android:fontFamily="monospace"
             android:paddingStart="4dp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="36dp" />
 
         <!-- ═══════════════════════════════════════ -->
         <!-- CENTER: The Hero Circle                 -->
         <!-- ═══════════════════════════════════════ -->
         <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center">
+            android:layout_width="216dp"
+            android:layout_height="216dp"
+            android:layout_gravity="center_horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
+            <!-- Outer ring (visible when 5G active) -->
+            <View
+                android:id="@+id/circleRing"
+                android:layout_width="208dp"
+                android:layout_height="208dp"
+                android:layout_gravity="center"
+                android:background="@drawable/brutal_circle_ring"
+                android:visibility="invisible" />
 
-                <!-- Circle with ring + shadow -->
-                <FrameLayout
+            <!-- Offset shadow circle -->
+            <View
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/brutal_circle_shadow" />
+
+            <!-- Main circular button -->
+            <FrameLayout
+                android:id="@+id/btnOpenRadioInfo"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                android:background="@drawable/brutal_circle_btn"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:translationX="-3dp"
+                android:translationY="-3dp">
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal">
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:gravity="center">
 
-                    <!-- Outer green ring (visible when 5G active) -->
-                    <View
-                        android:id="@+id/circleRing"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/brutal_circle_ring"
-                        android:visibility="invisible" />
+                    <TextView
+                        android:id="@+id/tvCircleIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⚡"
+                        android:textSize="32sp" />
 
-                    <!-- Offset shadow -->
-                    <View
-                        android:layout_width="180dp"
-                        android:layout_height="180dp"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginTop="6dp"
-                        android:background="@drawable/brutal_circle_shadow" />
+                    <TextView
+                        android:id="@+id/tvCircleLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FORCE"
+                        android:textColor="@color/text_on_dark"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace"
+                        android:letterSpacing="0.15" />
 
-                    <!-- Main circle button -->
-                    <FrameLayout
-                        android:id="@+id/btnOpenRadioInfo"
-                        android:layout_width="180dp"
-                        android:layout_height="180dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/brutal_circle_btn"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:foreground="?attr/selectableItemBackgroundBorderless"
-                        android:translationX="-3dp"
-                        android:translationY="-3dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="vertical"
-                            android:gravity="center">
-
-                            <TextView
-                                android:id="@+id/tvCircleIcon"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="⚡"
-                                android:textSize="36sp" />
-
-                            <TextView
-                                android:id="@+id/tvCircleLabel"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="FORCE"
-                                android:textColor="@color/text_on_dark"
-                                android:textSize="20sp"
-                                android:textStyle="bold"
-                                android:fontFamily="monospace"
-                                android:letterSpacing="0.15" />
-
-                            <TextView
-                                android:id="@+id/tvCircleSub"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5G"
-                                android:textColor="@color/text_on_dark"
-                                android:textSize="30sp"
-                                android:textStyle="bold"
-                                android:fontFamily="monospace"
-                                android:letterSpacing="0.2" />
-                        </LinearLayout>
-                    </FrameLayout>
-                </FrameLayout>
-
-                <!-- Status label under circle -->
-                <TextView
-                    android:id="@+id/tvCircleStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TAP TO ENABLE NR-ONLY"
-                    android:textColor="@color/text_muted"
-                    android:textSize="10sp"
-                    android:fontFamily="monospace"
-                    android:letterSpacing="0.12"
-                    android:layout_marginTop="14dp" />
-
-                <!-- Connection timer -->
-                <TextView
-                    android:id="@+id/tvConnectionTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textColor="@color/text_muted"
-                    android:textSize="9sp"
-                    android:fontFamily="monospace"
-                    android:letterSpacing="0.08"
-                    android:layout_marginTop="4dp"
-                    android:visibility="gone" />
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/tvCircleSub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5G"
+                        android:textColor="@color/text_on_dark"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace"
+                        android:letterSpacing="0.2" />
+                </LinearLayout>
+            </FrameLayout>
         </FrameLayout>
+
+        <!-- Status label under circle -->
+        <TextView
+            android:id="@+id/tvCircleStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TAP TO ENABLE NR-ONLY"
+            android:textColor="@color/text_muted"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.12"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="40dp" />
 
         <!-- ═══════════════════════════════════════ -->
         <!-- BOTTOM ACTIONS: Speed Test + Info       -->
@@ -268,23 +257,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="4dp"
-            android:baselineAligned="false">
+            android:layout_marginBottom="24dp">
 
             <!-- Speed Test -->
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginEnd="6dp">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="4dp"
-                    android:background="@drawable/brutal_shadow" />
+                android:layout_marginEnd="8dp">
 
                 <LinearLayout
                     android:id="@+id/btnSpeedTest"
@@ -292,12 +272,11 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:padding="14dp"
+                    android:paddingVertical="14dp"
+                    android:paddingHorizontal="10dp"
                     android:background="@drawable/card_rounded_bg"
                     android:clickable="true"
-                    android:focusable="true"
-                    android:translationX="-2dp"
-                    android:translationY="-2dp">
+                    android:focusable="true">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -320,19 +299,12 @@
                 </LinearLayout>
             </FrameLayout>
 
-            <!-- Device Info -->
+            <!-- Band Info -->
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginStart="6dp">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="4dp"
-                    android:background="@drawable/brutal_shadow" />
+                android:layout_marginStart="8dp">
 
                 <LinearLayout
                     android:id="@+id/btnDeviceInfo"
@@ -340,12 +312,11 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:padding="14dp"
+                    android:paddingVertical="14dp"
+                    android:paddingHorizontal="10dp"
                     android:background="@drawable/card_rounded_bg"
                     android:clickable="true"
-                    android:focusable="true"
-                    android:translationX="-2dp"
-                    android:translationY="-2dp">
+                    android:focusable="true">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -370,16 +341,21 @@
         </LinearLayout>
 
         <!-- Footer -->
+        <View
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:background="@color/text_muted"
+            android:layout_marginBottom="8dp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="NO ADS · NO TRACKING · OPEN SOURCE"
             android:textColor="@color/text_muted"
-            android:textSize="8sp"
+            android:textSize="9sp"
             android:fontFamily="monospace"
             android:gravity="center"
-            android:letterSpacing="0.08"
-            android:layout_marginTop="10dp" />
+            android:letterSpacing="0.08" />
 
     </LinearLayout>
-</FrameLayout>
+</androidx.core.widget.NestedScrollView>
