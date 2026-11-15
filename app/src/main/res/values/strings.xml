@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Aero 5G Force</string>
+    <string name="tile_label">5G Switcher</string>
+    <string name="hero_action_title">Switch Network Mode</string>
+    <string name="hero_action_subtitle">Tap to launch hidden phone radio config</string>
+    <string name="diagnostics_title">Live Connection Telemetry</string>
+    <string name="network_status_unknown">Analyzing Cellular State…</string>
+    <string name="vonr_warning_title">Important VoNR &amp; Call Advisory</string>
+    <string name="vonr_warning_desc">Selecting &quot;NR only&quot; forces 5G Standalone. If your carrier does not support Voice over 5G (VoNR), incoming calls may not ring. Use &quot;NR/LTE&quot; for uninterrupted calls.</string>
+    <string name="mode_guide_title">Recommended Network Profiles</string>
+    <string name="mode_guide_nr_only">NR only: Unlimited 5G speed (Carrier must have 5G SA).</string>
+    <string name="mode_guide_nr_lte">NR / LTE: 5G speed + 4G VoLTE calls fallback (Recommended).</string>
+    <string name="mode_guide_default">LTE / WCDMA / GSM: Standard automatic switching.</string>
+</resources>
