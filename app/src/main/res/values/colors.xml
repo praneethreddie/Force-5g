@@ -1,25 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Backgrounds & Surfaces (Deep space / Cyber dark aesthetic) -->
-    <color name="bg_main">#0B0F19</color>
-    <color name="surface_card">#131B2E</color>
-    <color name="surface_card_stroke">#1E2A47</color>
-    <color name="surface_card_inner">#18233C</color>
+    <!-- Light Brutalist Base -->
+    <color name="bg_main">#F5F0EB</color>
+    <color name="surface_card">#FFFFFF</color>
+    <color name="surface_card_stroke">#1A1A1A</color>
+    <color name="surface_card_inner">#FFFFFF</color>
 
-    <!-- Accent & Highlights -->
-    <color name="cyan_5g">#00E5FF</color>
-    <color name="cyan_5g_glow">#3300E5FF</color>
-    <color name="emerald_active">#00E676</color>
-    <color name="amber_warning">#FFB300</color>
-    <color name="amber_warning_bg">#292211</color>
-    <color name="ruby_alert">#FF5252</color>
+    <!-- Brutalist Accents -->
+    <color name="accent_primary">#1A1A1A</color>
+    <color name="accent_hot">#FF3B30</color>
+    <color name="accent_blue">#2563EB</color>
+    <color name="emerald_active">#16A34A</color>
+    <color name="emerald_bg">#DCFCE7</color>
+    <color name="amber_warning">#D97706</color>
+    <color name="amber_warning_bg">#FEF3C7</color>
+    <color name="ruby_alert">#DC2626</color>
 
-    <!-- Text Typography -->
-    <color name="text_primary">#F1F5F9</color>
-    <color name="text_secondary">#94A3B8</color>
-    <color name="text_muted">#64748B</color>
+    <!-- Keep old name for compat -->
+    <color name="cyan_5g">#1A1A1A</color>
 
-    <!-- Standard system fallbacks -->
+    <!-- Circle button states -->
+    <color name="circle_default">#1A1A1A</color>
+    <color name="circle_active">#16A34A</color>
+    <color name="circle_ring_active">#86EFAC</color>
+
+    <!-- Text -->
+    <color name="text_primary">#0F0F0F</color>
+    <color name="text_secondary">#3F3F3F</color>
+    <color name="text_muted">#6B7280</color>
+    <color name="text_on_dark">#FFFFFF</color>
+    <color name="text_on_dark_sub">#9E9E9E</color>
+
+    <!-- Mode chips -->
+    <color name="chip_selected_bg">#1A1A1A</color>
+    <color name="chip_selected_text">#FFFFFF</color>
+    <color name="chip_default_bg">#FFFFFF</color>
+    <color name="chip_default_text">#1A1A1A</color>
+
+    <!-- Shadow -->
+    <color name="shadow_block">#1A1A1A</color>
+
+    <!-- System -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

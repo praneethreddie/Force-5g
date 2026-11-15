@@ -1,373 +1,385 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_main"
-    android:fillViewport="true">
+    android:background="@color/bg_main">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:paddingHorizontal="22dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="20dp">
 
-        <!-- Top Header Bar -->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="24dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tvAppTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="AERO 5G FORCE"
-                    android:textColor="@color/text_primary"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:letterSpacing="0.05" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Advanced Cellular Radio Controller"
-                    android:textColor="@color/text_muted"
-                    android:textSize="13sp"
-                    android:layout_marginTop="2dp" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:background="@drawable/badge_bg"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
-                android:text="AD-FREE"
-                android:textColor="@color/cyan_5g"
-                android:textSize="11sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
-
-        <!-- Live Network Telemetry Card -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="@color/surface_card"
-            app:cardCornerRadius="18dp"
-            app:strokeColor="@color/surface_card_stroke"
-            app:strokeWidth="1dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-
-                    <View
-                        android:id="@+id/statusIndicator"
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        android:background="@drawable/circle_indicator" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:text="LIVE NETWORK TELEMETRY"
-                        android:textColor="@color/text_muted"
-                        android:textSize="11sp"
-                        android:textStyle="bold"
-                        android:letterSpacing="0.08" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginTop="14dp">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tvCarrierName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Carrier: Detecting…"
-                            android:textColor="@color/text_primary"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tvNetworkType"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Radio Mode: Checking active band"
-                            android:textColor="@color/cyan_5g"
-                            android:textSize="14sp"
-                            android:layout_marginTop="4dp" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/tv5GBadge"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/badge_5g"
-                        android:paddingHorizontal="14dp"
-                        android:paddingVertical="8dp"
-                        android:text="5G"
-                        android:textColor="@color/cyan_5g"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Main Switch Action Hero Button -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/btnOpenRadioInfo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/surface_card_inner"
-            app:cardCornerRadius="18dp"
-            app:strokeColor="@color/cyan_5g"
-            app:strokeWidth="1.5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="20dp">
-
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@drawable/ic_5g_tile"
-                    app:tint="@color/cyan_5g" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="16dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Launch Radio Configuration"
-                        android:textColor="@color/text_primary"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Switch to NR only or NR/LTE in 1 tap"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="12sp"
-                        android:layout_marginTop="2dp" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="GO →"
-                    android:textColor="@color/cyan_5g"
-                    android:textStyle="bold"
-                    android:textSize="14sp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Quick Settings Tile Tip Card -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="@color/surface_card"
-            app:cardCornerRadius="14dp"
-            app:strokeColor="@color/surface_card_stroke"
-            app:strokeWidth="1dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp">
-
-                <ImageView
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:src="@drawable/ic_tower"
-                    app:tint="@color/cyan_5g" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:text="Quick Access: Pull down your phone's notification shade and add the &quot;5G Switcher&quot; tile for instant 1-tap switching."
-                    android:textColor="@color/text_secondary"
-                    android:textSize="12sp"
-                    android:lineSpacingExtra="2dp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- VoNR / Phone Calls Advisory Card -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="@color/amber_warning_bg"
-            app:cardCornerRadius="14dp"
-            app:strokeColor="@color/amber_warning"
-            app:strokeWidth="1dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_warning"
-                        app:tint="@color/amber_warning" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:text="VoNR Voice Call Notice"
-                        android:textColor="@color/amber_warning"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="If you set &quot;NR only&quot;, ensure your carrier has VoNR (Voice over 5G) active in your area. If incoming calls do not connect, switch to &quot;NR/LTE&quot; to keep 5G speeds while retaining 4G VoLTE calling."
-                    android:textColor="@color/text_secondary"
-                    android:textSize="12sp"
-                    android:lineSpacingExtra="3dp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Network Profiles Guide -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NETWORK PROFILE CHEATSHEET"
-            android:textColor="@color/text_muted"
-            android:textSize="11sp"
-            android:textStyle="bold"
-            android:letterSpacing="0.08"
-            android:layout_marginBottom="12dp" />
-
+        <!-- ═══════════════════════════════════════ -->
+        <!-- TOP BAR: Title + Badge                  -->
+        <!-- ═══════════════════════════════════════ -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/card_rounded_bg"
-            android:padding="16dp">
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="14dp">
+
+            <TextView
+                android:id="@+id/tvAppTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="FORCE 5G"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="• NR only"
-                android:textColor="@color/cyan_5g"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Forces pure 5G Standalone (SA). Unlimited maximum throughput; blocks 4G."
-                android:textColor="@color/text_secondary"
-                android:textSize="12sp"
-                android:layout_marginStart="12dp"
-                android:layout_marginBottom="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• NR / LTE (Recommended)"
-                android:textColor="@color/emerald_active"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Locks phone to 5G + 4G. Keeps fast 5G data while maintaining voice calls."
-                android:textColor="@color/text_secondary"
-                android:textSize="12sp"
-                android:layout_marginStart="12dp"
-                android:layout_marginBottom="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• GSM / WCDMA / LTE (PRL)"
-                android:textColor="@color/text_muted"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Standard factory automatic profile (reverts all forced changes)."
-                android:textColor="@color/text_secondary"
-                android:textSize="12sp"
-                android:layout_marginStart="12dp" />
+                android:background="@drawable/badge_bg"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:text="v1.0"
+                android:textColor="@color/accent_blue"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace" />
         </LinearLayout>
 
+        <!-- ═══════════════════════════════════════ -->
+        <!-- CARRIER STRIP: slim, informational      -->
+        <!-- ═══════════════════════════════════════ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/card_rounded_bg"
+            android:padding="10dp"
+            android:layout_marginBottom="6dp">
+
+            <!-- Status dot -->
+            <View
+                android:id="@+id/statusIndicator"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/circle_indicator" />
+
+            <!-- Carrier name -->
+            <TextView
+                android:id="@+id/tvCarrierName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="—"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:singleLine="true" />
+
+            <!-- Signal strength bars -->
+            <LinearLayout
+                android:id="@+id/signalBarsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="bottom"
+                android:layout_marginEnd="10dp">
+
+                <View
+                    android:id="@+id/signalBar1"
+                    android:layout_width="4dp"
+                    android:layout_height="6dp"
+                    android:layout_marginEnd="2dp"
+                    android:background="@drawable/signal_bar_filled" />
+                <View
+                    android:id="@+id/signalBar2"
+                    android:layout_width="4dp"
+                    android:layout_height="10dp"
+                    android:layout_marginEnd="2dp"
+                    android:background="@drawable/signal_bar_filled" />
+                <View
+                    android:id="@+id/signalBar3"
+                    android:layout_width="4dp"
+                    android:layout_height="14dp"
+                    android:layout_marginEnd="2dp"
+                    android:background="@drawable/signal_bar_filled" />
+                <View
+                    android:id="@+id/signalBar4"
+                    android:layout_width="4dp"
+                    android:layout_height="18dp"
+                    android:background="@drawable/signal_bar_empty" />
+            </LinearLayout>
+
+            <!-- Network badge -->
+            <TextView
+                android:id="@+id/tv5GBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/badge_5g"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:text="LTE"
+                android:textColor="@color/text_primary"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- Network type subtitle -->
+        <TextView
+            android:id="@+id/tvNetworkType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Checking connection…"
+            android:textColor="@color/text_muted"
+            android:textSize="10sp"
+            android:fontFamily="monospace"
+            android:paddingStart="4dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- CENTER: The Hero Circle                 -->
+        <!-- ═══════════════════════════════════════ -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- Circle with ring + shadow -->
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                    <!-- Outer green ring (visible when 5G active) -->
+                    <View
+                        android:id="@+id/circleRing"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/brutal_circle_ring"
+                        android:visibility="invisible" />
+
+                    <!-- Offset shadow -->
+                    <View
+                        android:layout_width="180dp"
+                        android:layout_height="180dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/brutal_circle_shadow" />
+
+                    <!-- Main circle button -->
+                    <FrameLayout
+                        android:id="@+id/btnOpenRadioInfo"
+                        android:layout_width="180dp"
+                        android:layout_height="180dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/brutal_circle_btn"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:translationX="-3dp"
+                        android:translationY="-3dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvCircleIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="⚡"
+                                android:textSize="36sp" />
+
+                            <TextView
+                                android:id="@+id/tvCircleLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="FORCE"
+                                android:textColor="@color/text_on_dark"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:fontFamily="monospace"
+                                android:letterSpacing="0.15" />
+
+                            <TextView
+                                android:id="@+id/tvCircleSub"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5G"
+                                android:textColor="@color/text_on_dark"
+                                android:textSize="30sp"
+                                android:textStyle="bold"
+                                android:fontFamily="monospace"
+                                android:letterSpacing="0.2" />
+                        </LinearLayout>
+                    </FrameLayout>
+                </FrameLayout>
+
+                <!-- Status label under circle -->
+                <TextView
+                    android:id="@+id/tvCircleStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TAP TO ENABLE NR-ONLY"
+                    android:textColor="@color/text_muted"
+                    android:textSize="10sp"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.12"
+                    android:layout_marginTop="14dp" />
+
+                <!-- Connection timer -->
+                <TextView
+                    android:id="@+id/tvConnectionTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/text_muted"
+                    android:textSize="9sp"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.08"
+                    android:layout_marginTop="4dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- BOTTOM ACTIONS: Speed Test + Info       -->
+        <!-- ═══════════════════════════════════════ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:baselineAligned="false">
+
+            <!-- Speed Test -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/brutal_shadow" />
+
+                <LinearLayout
+                    android:id="@+id/btnSpeedTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:background="@drawable/card_rounded_bg"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:translationX="-2dp"
+                    android:translationY="-2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="↓↑"
+                        android:textColor="@color/accent_blue"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SPEED TEST"
+                        android:textColor="@color/text_primary"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace"
+                        android:letterSpacing="0.06"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Device Info -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/brutal_shadow" />
+
+                <LinearLayout
+                    android:id="@+id/btnDeviceInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:background="@drawable/card_rounded_bg"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:translationX="-2dp"
+                    android:translationY="-2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="◉"
+                        android:textColor="@color/accent_hot"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BAND INFO"
+                        android:textColor="@color/text_primary"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace"
+                        android:letterSpacing="0.06"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- Footer -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Zero Telemetry • Zero Trackers • Pure System Control"
+            android:text="NO ADS · NO TRACKING · OPEN SOURCE"
             android:textColor="@color/text_muted"
-            android:textSize="11sp"
+            android:textSize="8sp"
+            android:fontFamily="monospace"
             android:gravity="center"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="12dp" />
+            android:letterSpacing="0.08"
+            android:layout_marginTop="10dp" />
 
     </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+</FrameLayout>
